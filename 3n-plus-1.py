@@ -3,14 +3,14 @@ import time
 start_time = time.time()
 
 for i in range(1, 1000):
-    n = int(i)
+    n = i
     list = []
 
     while (n != 1):
-        list.append(int(n))
-        print(int(n))
+        list.append(n)
+        print(n)
         if (n % 2 == 0):
-            n /= 2
+            n = n // 2
         else:
             n = n * 3 + 1
     print("1")
