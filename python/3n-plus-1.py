@@ -1,8 +1,9 @@
-import matplotlib.pyplot as plt
-import time
+import json
+import time, os
 start_time = time.time()
+data = []
 
-for i in range(1, 1000):
+for i in range(1, 100):
     n = i
     list = []
 
@@ -14,8 +15,10 @@ for i in range(1, 1000):
         else:
             n = n * 3 + 1
     print("1")
-    plt.plot(list)
+    data.append(list)
 
 print("Time to complete (seconds): ")
 print(time.time() - start_time)
-plt.show()
+
+with open(os.path.join(os.pardir,'data.json'), 'w') as f:
+    json.dump(data, f, ensure_ascii=False, indent=4)
