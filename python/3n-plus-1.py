@@ -1,9 +1,9 @@
 import json
-import time, os
-start_time = time.time()
+import os
+
 data = []
 
-for i in range(1, 100):
+for i in range(1, 1000):
     n = i
     list = []
 
@@ -17,8 +17,5 @@ for i in range(1, 100):
     print("1")
     data.append(list)
 
-print("Time to complete (seconds): ")
-print(time.time() - start_time)
-
-with open(os.path.join(os.pardir,'data.json'), 'w') as f:
+with open('data.json', 'w') as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
