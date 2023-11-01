@@ -402,3 +402,6 @@ venv/
 
 #data
 data.json
+
+#Bun
+bun.lockb

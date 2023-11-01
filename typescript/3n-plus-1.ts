@@ -1,9 +1,9 @@
-let data = []
-const FileSystem = require("fs");
+let data:number[] = []
+import { writeFile } from 'fs/promises';
 
 for (let i = 1; i < 1000; i++) {
-    let n = i;
-    let list = [];
+    let n:number = i;
+    let list:number[] = [];
 
     while (n != 1){
         list.push(n);
@@ -16,9 +16,7 @@ for (let i = 1; i < 1000; i++) {
         }
     }
     console.log("1");
-    data.push(list)
+    data.push(list);
 }
 
-FileSystem.writeFile('data.json', JSON.stringify(data), (error) => {
-    if (error) throw error;
-});
+writeFile('data.json', JSON.stringify(data));
